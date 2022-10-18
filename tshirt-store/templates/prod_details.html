@@ -14,7 +14,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-md-end bg-transparent p-0 m-0">
             <li class="breadcrumb-item"><a class="link-title" href="#">Home</a> </li>
-            <li class="breadcrumb-item"><a class="link-title" href="#">Shop</a></li>
+            <li class="breadcrumb-item"><a class="link-title" href="#">Loja</a></li>
             <li class="breadcrumb-item active text-primary" aria-current="page">{{details.name|title}}</li>
           </ol>
         </nav>
@@ -58,13 +58,13 @@
         <div class="product-details">
           <h1 class="h4 mb-0 font-w-6">{{details.name|title}}</h1>
           <div class="star-rating mb-4"><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
-          </div> <span class="product-price h5 text-pink">Rs.  {{sell_price}} <del class="text-muted h6">Rs. {{price}}</del></span>
+          </div> <span class="product-price h5 text-pink">R$:  {{sell_price}} <del class="text-muted h6">R$: {{price}}</del></span>
           <ul class="list-unstyled my-3">
-            <li><small>Discount: <span class="text-red"> <strong> {{details.discount}}%</strong></span> </small>
+            <li><small>Desconto: <span class="text-red"> <strong> {{details.discount}}%</strong></span> </small>
             </li>
-            <li><small>Availibility: <span class="text-green"> In Stock</span> </small>
+            <li><small>Disponibilidade: <span class="text-green"> Em Stock</span> </small>
             </li>
-            <li class="font-w-4"><small>Categories :<span class="text-muted"> womens, clothing, dresses, footwear</span></small>
+            <li class="font-w-4"><small>Categorias :<span class="text-muted"> mulheres, roupas, vestidos, calçados</span></small>
             </li>
           </ul>
           <p class="mb-4 desc">{{details.desc}}</p>
@@ -80,8 +80,8 @@
             </div>
           </div>
           <div class="d-sm-flex align-items-center mt-5">
-            <a href="{% url 'cart' details.slug active_size.size %}?return_url={{request.get_full_path}}" class="btn btn-primary btn-animated mr-sm-3 mb-3 mb-sm-0"><i class="las la-shopping-cart mr-2"></i>Add To Cart</a>
-            <a class="btn btn-animated btn-dark" href=""> <i class="lar la-heart mr-2 ic-1-2x"></i>Add To Wishlist
+            <a href="{% url 'cart' details.slug active_size.size %}?return_url={{request.get_full_path}}" class="btn btn-primary btn-animated mr-sm-3 mb-3 mb-sm-0"><i class="las la-shopping-cart mr-2"></i>Adicionar ao carrinho </a>
+            <a class="btn btn-animated btn-dark" href=""> <i class="lar la-heart mr-2 ic-1-2x"></i>Adicionar a lista de desejos
             </a>
           </div>
           
@@ -103,9 +103,9 @@
         <div class="tab product-tab">
           <!-- Nav tabs -->
           <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist"> <a class="nav-item nav-link active ml-0" id="nav-tab1" data-toggle="tab" href="#tab3-1" role="tab" aria-selected="true">Description</a>
-              <a class="nav-item nav-link" id="nav-tab2" data-toggle="tab" href="#tab3-2" role="tab" aria-selected="false">Specification</a>
-              <a class="nav-item nav-link" id="nav-tab3" data-toggle="tab" href="#tab3-3" role="tab" aria-selected="false">Ratings and Reviews</a>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist"> <a class="nav-item nav-link active ml-0" id="nav-tab1" data-toggle="tab" href="#tab3-1" role="tab" aria-selected="true">Descrição</a>
+              <a class="nav-item nav-link" id="nav-tab2" data-toggle="tab" href="#tab3-2" role="tab" aria-selected="false">Especificação</a>
+                <a class="nav-item nav-link" id="nav-tab3" data-toggle="tab" href="#tab3-3" role="tab" aria-selected="false">Classificações e avaliações </a>
             </div>
           </nav>
           <!-- Tab panes -->
@@ -122,33 +122,33 @@
               <table class="table table-bordered mb-0">
                 <tbody>
                   <tr>
-                    <td>Size</td>
+                    <td>Tamanho</td>
                 {% for size in tshirt.sizevariant_set.all %}
                     <td>{{size.size}}</td>
                   {% endfor %}
                   </tr>
                   <tr>
-                    <td>Color</td>
+                    <td>Cor</td>
                     <td>{{details.color}}</td>
                   </tr>
                   <tr>
-                    <td>Sleeves</td>
+                    <td>Mangas</td>
                     <td>{{details.sleeve}}</td>
                   </tr>
                   <tr>
-                    <td>Ideal For</td>
+                    <td>Ideal para</td>
                     <td>{{details.ideal}}</td>
                   </tr>
                   <tr>
-                    <td>Occassion</td>
+                    <td>Ocasião</td>
                     <td>{{details.occassion}}</td>
                   </tr>
                   <tr>
-                    <td>Discount</td>
+                    <td>Desconto</td>
                     <td>{{details.discount}}%</td>
                   </tr>
                   <tr>
-                    <td>Warranty</td>
+                    <td>Garantia</td>
                     <td>6 Months</td>
                   </tr>
                 </tbody>
@@ -158,10 +158,10 @@
               <div class="row align-items-center">
                 <div class="col-md-6">
                   <div class="bg-light-4 text-center p-5">
-                    <h4>Based on 3 Reviews</h4>
-                    <h5>Average</h5>
+                    <h4>Com base em 3 avaliações</h4>
+                    <h5>Média</h5>
                     <h4>4.0</h4>
-                    <h6>(03 Reviews)</h6>
+                    <h6>(03 Avaliações)</h6>
                   </div>
                 </div>
                 <div class="col-md-6 mt-3 mt-lg-0">
@@ -225,13 +225,13 @@
                                     <div class="d-flex">
                                         <div class="meta_data">
                                             <h6><a href="#">Saraha Doe</a></h6>
-                                            <div class="comment-time">March 5, 2020, 07:35 PM</div>
+                                            <div class="comment-time">March 5, 2022, 07:35 PM</div>
                                         </div>
                                         <div class="ml-auto">
-                                            <a href="#" class="comment-reply"><i class="las la-arrow-left"></i> Reply</a>
+                                            <a href="#" class="comment-reply"><i class="las la-arrow-left"></i> Responder</a>
                                         </div>
                                     </div>
-                                    <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <p>Perfeito.</p>
                                 </div>
                             </div>
                             <ul class="children">
@@ -244,13 +244,13 @@
                                             <div class="d-flex align-items-md-center">
                                                 <div class="meta_data">
                                                     <h6><a href="#">Stephen Smith</a></h6>
-                                                    <div class="comment-time">April 19, 2020, 01:45 PM</div>
+                                                    <div class="comment-time">April 19, 2022, 01:45 PM</div>
                                                 </div>
                                                 <div class="ml-auto">
-                                                    <a href="#" class="comment-reply"><i class="las la-arrow-left"></i> Reply</a>
+                                                    <a href="#" class="comment-reply"><i class="las la-arrow-left"></i> Responder</a>
                                                 </div>
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, ex, quisquam. Nulla excepturi sint iusto incidunt sed omnis expedita, commodi dolores. Debitis nemo animi quia deleniti commodi nesciunt illo.</p>
+                                            <p>Amei</p>
                                         </div>
                                     </div>
                                 </li>
@@ -268,17 +268,17 @@
                                             <div class="comment-time">may 25, 2020, 05:20 PM</div>
                                         </div>
                                         <div class="ml-auto">
-                                            <a href="#" class="comment-reply"><i class="las la-arrow-left"></i> Reply</a>
+                                            <a href="#" class="comment-reply"><i class="las la-arrow-left"></i> Responder</a>
                                         </div>
                                     </div>
-                                    <p>Aliquam vehicula neque ac nibh suscipit ultrices. Morbi interdum accumsan arcu nec scelerisque. Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Donec rutrum congue leo eget malesuada.</p>
+                                    <p>Recomendo</p>
                                 </div>
                             </div>
                         </li>
                     </ul>
           <div class="mt-8 bg-light-4 rounded p-5">
                 <div class="section-title mb-3">
-                  <h4>Add a review</h4>
+                  <h4>Adicionar uma avaliação</h4>
                 </div>
                 <form id="contact-form" class="row" method="post" action="http://themesground.com/flipmarto/demo/html/contact.php">
                   <div class="messages"></div>
@@ -292,7 +292,7 @@
                   </div>
                   <div class="form-group clearfix col-12">
                     <select class="custom-select form-control">
-                      <option value="">Rating -- Select</option>
+                      <option value="">Classificação -- Selecionar</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -305,7 +305,7 @@
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-12">
-                    <button class="btn btn-primary btn-animated mt-1">Post Review</button>
+                    <button class="btn btn-primary btn-animated mt-1">Publicar revisão</button>
                   </div>
                 </form>
               </div>

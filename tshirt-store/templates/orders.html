@@ -46,13 +46,13 @@ li {
 <div class="col-lg-12">
 
 <table class="table table-hover">
-  <h2>Your Orders</h2>
-  <thead>
-    <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Products</th>      
-      <th scope="col">Status</th>      
-      <th scope="col">Payment Method</th>      
+    <h2>Seus pedidos</h2>
+    <thead>
+      <tr>
+        <th scope="col">Data</th>
+        <th scope="col">Produtos</th>
+        <th scope="col">Status</th>
+        <th scope="col">Método de pagamento</th>     
     </tr>
   </thead>
   <tbody>
@@ -63,11 +63,11 @@ li {
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th>S.NO</th>
+                                <th>S.N</th>
                                 <th></th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th>Quantidade</th>
                             </tr>
                         </thead>
 
@@ -77,9 +77,9 @@ li {
                                 <td>{{forloop.counter}}</td>
                                 <td><img height="60px" src="{{oi.tshirt.image1.url}}" alt="" style="border-radius:50%;"></td>
                                 <td>{{oi.tshirt.name}}</td>
-                                <td>Rs. {{oi.price}}</td>
-                                <td>x {{oi.quantity}} qty </td>
-                                <td>{% multiply oi.quantity oi.price as result %} Rs. {{result}}</td>
+                                <td>R$: {{oi.price}}</td>
+                                <td>x {{oi.quantity}} qtd </td>
+                                <td>{% multiply oi.quantity oi.price as result %} R$: {{result}}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -96,42 +96,42 @@ li {
                  {% if i.order_status == "PLACED"%}
                 <td>
                 <ul id="progress">
-    <li><div class="node green"></div><p><strong> Your Order Is Placed</strong></p></li>
-    <li><div class="divider blue"></div></li>
-    <li><div class="node grey"></div><p>Your Order Is Packed</p></li>
-    <li><div class="divider grey"></div></li>
-    <li><div class="node grey"></div><p>Your Order Is Ready For Shipping</p></li>
+                    <li><div class="node green"></div><p><strong> Seu pedido foi feito</strong></p></li>
+                    <li><div class="divider blue"></div></li>
+                    <li><div class="node grey"></div><p>Seu pedido está embalado</p></li>
+                    <li><div class="divider grey"></div></li>
+                    <li><div class="node grey"></div><p>Seu pedido está pronto para envio</p></li>
     {% comment %} <li><div class="divider grey"></div></li> {% endcomment %}
 </ul>
                 </td>
                 {% elif i.order_status == "PACKED"%}
                 <td>
-                                <ul id="progress">
-    <li ><div class="node green"></div><p> <strong> Your Order Is Placed</strong></p></li>
-    <li><div class="divider blue"></div></li>
-    <li><div class="node green"></div><p><strong>Your Order Is Packed</strong></p></li>
-    <li><div class="divider blue"></div></li>
-    <li><div class="node grey"></div><p>Your Order Is Ready For Shipping</p></li>
+                        <ul id="progress">
+                            <li ><div class="node green"></div><p> <strong> Seu pedido foi feito</strong></p></li>
+                            <li><div class="divider blue"></div></li>
+                            <li><div class="node green"></div><p><strong>Seu pedido está embalado</strong></p></li>
+                            <li><div class="divider blue"></div></li>
+                            <li><div class="node grey"></div><p>Seu pedido está pronto para envio</p></li>
     {% comment %} <li><div class="divider grey"></div></li> {% endcomment %}
 </ul>
                 </td>
                 {% elif i.order_status == "SHIPPED"%}
                 <td>
                                 <ul id="progress">
-    <li><div class="node green"></div><p><strong>Your Order Is Placed</strong></p></li>
-    <li><div class="divider blue"></div></li>
-    <li><div class="node green"></div><p><strong>Your Order Is Packed</strong></p></li>
-    <li><div class="divider blue"></div></li>
-    <li><div class="node green"></div><p><strong>Your Order Is Ready For Shipping</strong></p></li>
+                            <li><div class="node green"></div><p><strong>Seu pedido foi feito</strong></p></li>
+                            <li><div class="divider blue"></div></li>
+                            <li><div class="node green"></div><p><strong>Seu pedido está embalado</strong></p></li>
+                            <li><div class="divider blue"></div></li>
+                            <li><div class="node green"></div><p><strong>Seu pedido está pronto para envio</strong></p></li>
     {% comment %} <li><div class="divider grey"></div></li> {% endcomment %}
 </ul>
                 </td>
                 {% endif %}
                 
                 {% if i.payment_method == "ONLINE"%}
-                <td><span class="btn btn-sm btn-success disabled">By Card</span></td>  
+                <td><span class="btn btn-sm btn-success disabled">Por cartão</span></td>  
                 {% elif i.payment_method == "COD"%}
-                <td><span class="badge badge-success">Cash On Delivery</span></td>                
+                <td><span class="badge badge-success">Dinheiro na entrega</span></td>                
                 {% endif %}
               
     </tr>
