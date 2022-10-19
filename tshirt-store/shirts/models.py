@@ -49,11 +49,11 @@ class Tshirt(models.Model):
     
 class Sizevariant(models.Model):
     SIZES = (
-        ('S', "Small"),
-        ('M', "Medium"),
-        ('L', "Large"),
-        ('XL', "Extra Large"),
-        ('XXL', "Extra Extra Large"),
+         ('S', "Pequeno"),
+         ('M', "Médio"),
+         ('L', "Grande"),
+         ('XL', "Extra Grande"),
+         ('XXL', "Extra Extra Grande"),
     )
     price = models.IntegerField(null=False)
     tshirt = models.ForeignKey(Tshirt, on_delete=models.CASCADE)
@@ -70,14 +70,14 @@ class Cart(models.Model):
     
 class order(models.Model):
     orderStatus = (
-        ('PENDING', "Pending"),
-        ('PLACED', "Your Order Is Placed"),
-        ('CANCELED', "Your Order Is Canceled"),
-        ('PACKED', "Your Order Is Packed"),
-        ('SHIPPED', "Your Order Is Ready For Shipping"),
+         ('PENDENTE', "Pendente"),
+         ("COLOCADO", "Seu pedido foi feito"),
+         ('CANCELADO', "Seu pedido foi cancelado"),
+         ('EMBALADO', "Seu pedido está embalado"),
+         ("ENVIADO", "Seu pedido está pronto para envio"),
     )
     method = (
-        ('COD', "Cod"),
+        ('COD', "Na Entrega"),
         ('ONLINE', "Online"),
     )
     order_status = models.CharField(max_length=15, choices=orderStatus)

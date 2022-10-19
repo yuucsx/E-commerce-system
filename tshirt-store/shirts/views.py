@@ -308,7 +308,7 @@ def checkout(request):
             orders.phone = phone
             orders.payment_method = payment_method
             orders.total = total
-            orders.order_status = "PENDING"
+            orders.order_status = "Pendente"
             orders.user = user
             orders.save()
 
