@@ -80,9 +80,8 @@
             </div>
           </div>
           <div class="d-sm-flex align-items-center mt-5">
-            <a href="{% url 'cart' details.slug active_size.size %}?return_url={{request.get_full_path}}" class="btn btn-primary btn-animated mr-sm-3 mb-3 mb-sm-0"><i class="las la-shopping-cart mr-2"></i>Adicionar ao carrinho </a>
-            <a class="btn btn-animated btn-dark" href=""> <i class="lar la-heart mr-2 ic-1-2x"></i>Adicionar a lista de desejos
-            </a>
+            <a href="{% url 'cart' details.slug active_size.size %}?return_url=/cart/" class="btn btn-primary btn-animated mr-sm-3 mb-3 mb-sm-0" ><i class="las la-shopping-cart mr-2" ></i>Adicionar ao carrinho </a>
+            <a class="btn btn-animated btn-dark"  href=""> <i class="lar la-heart mr-2 ic-1-2x"></i>Adicionar a lista de desejos</a>
           </div>
           
         </div>

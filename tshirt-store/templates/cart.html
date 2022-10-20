@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+
 {% block title %}
 Cart
 {% endblock title %}
+<!-- Favicon Icon -->
+<link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
 {% block body %}
 {% load custom_tags %}
+
+
 
 <section class="bg-light py-6">
   <div class="container">
@@ -30,6 +35,7 @@ Cart
 <!--hero section end--> 
 
 
+
 <!--body content start-->
 
 <div class="page-content">
@@ -46,7 +52,7 @@ Cart
                 <th scope="col">Tamanho</th>
                 <th scope="col">Preço</th>
                 <th scope="col">Desconto</th>
-                <th scope="col">Preõ da Promoção</th>
+                <th scope="col">Preço da Promoção</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Total</th>
               </tr>
@@ -82,7 +88,7 @@ Cart
                     </button>
                   </div>
                 </td>
-                <td> <span class="product-price text-primary font-w-6">R$: {% multiply total_sale_price i.quantity %}</span>
+               <td> <span class="product-price text-primary font-w-6">R$: {% multiply total_sale_price i.quantity %}</span>
                   <a href="#" class="close-link"><i class="las la-times"></i></a>
                 </td>
               </tr>    
@@ -101,22 +107,6 @@ Cart
         </div>
       </div>
     </div>
-    <div class="d-md-flex align-items-end justify-content-between py-5 px-5 mt-5 bg-light-4">
-          <div>
-            <label class="text-black h4" for="coupon">Cupom</label>
-            <p>Insira o código do seu cupom se você tiver um.</p>
-            <div class="row form-row">
-              <div class="col">
-                <input class="form-control" id="coupon" placeholder="Coupon Code" type="text">
-              </div>
-              <div class="col col-auto">
-                <button class="btn btn-dark btn-animated">Aplicar Cupom</button>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-animated mt-3 mt-md-0">Atualizar Carrinho</button>
-        </div>
-  </div>
 </section>
 {% endblock body %}
 
