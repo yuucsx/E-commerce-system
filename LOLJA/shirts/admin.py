@@ -3,12 +3,13 @@ from .models import *
 
 # Register your models here.
 
+
 class SizeVariantConfig(admin.TabularInline):
     model = Sizevariant
 
-class TshirtConfig(admin.ModelAdmin):
-    inlines = [SizeVariantConfig]    
 
+class TshirtConfig(admin.ModelAdmin):
+    inlines = [SizeVariantConfig]
 
 
 admin.site.register(Tshirt, TshirtConfig)
@@ -21,3 +22,4 @@ admin.site.register(color)
 admin.site.register(Payment)
 admin.site.register(order)
 admin.site.register(order_item)
+admin.site.register(Cart)

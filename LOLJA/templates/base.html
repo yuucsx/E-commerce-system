@@ -69,5 +69,14 @@
 <script src=" {% static 'js/wow.js' %}"></script> 
 <script src=" {% static 'js/theme-script.js' %}"></script> 
 
+<script>
+  var preventdefault = function(e){
+    e.preventDefault()
+  }
+  function updatecart(slug,size,method){
+    console.log(slug)
+    window.location.href = '/updatecart/'+slug+'/'+size+'/'+method+'?return_url=/cart/'
+  }
+</script>
 </body>
 </html>

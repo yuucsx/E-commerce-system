@@ -6,8 +6,8 @@ from django.conf.urls import handler404
 
 urlpatterns = [
     path('', views.home, name='home'),
-    
-    #Error handlers
+
+    # Error handlers
     path('handler404/', views.handler404),
     path('handler500/', views.handler500),
 
@@ -15,8 +15,8 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('orders/', views.orders, name='orders'),
     path('allprod/', views.allprod, name='all_prod'),
-    
-    #Custom Admin
+
+    # Custom Admin
     path('admin_login/', views.admin_login, name='admin_login'),
     path('webadmin/', views.admin_dashboard, name='admin_dashboard'),
     path('all_users/', views.all_users, name='all_users'),
@@ -28,17 +28,22 @@ urlpatterns = [
     path('add_neck/', views.add_neck, name='add_neck'),
     path('edit_product/<int:id>/', views.edit_product, name='edit_product'),
     path('delete_product/<int:id>/', views.delete_product, name='delete_product'),
-    
-    
-    #Cart
+
+
+    # Cart
     path('checkout/', views.checkout, name='checkout'),
-    path('cart/', views.cart, name='cart_detail'),    
+    path('cart/', views.cart, name='cart_detail'),
     path('cart/<str:slug>/<str:size>', views.addtocart, name='cart'),
-    
-    #product detail
+    path('updatecart/<int:id>/<str:size>/<str:method>',
+         views.update_cart_for_anom_user, name='updatecart'),
+    path('removecart/<int:id>/<str:size>',
+         views.remove_cart, name='removecart'),
+
+
+    # product detail
     path('product/<slug:slug>/', views.product_detail, name='product_detail'),
 
-    #User Login/Signup 
+    # User Login/Signup
     path('usersignup/', views.signup, name='signup'),
     path('userlogin/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
