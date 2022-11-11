@@ -28,10 +28,15 @@ class color(Tshirtproperty):
     pass
 
 class Tshirt(models.Model):
+    CATEGORY = (
+         ('m', "masculino"),
+         ('f', "feminino"),
+    )
     name = models.CharField(max_length=50, null=True)
     slug = AutoSlugField(populate_from='name', unique=True, null=False, default="")
     desc = models.CharField(max_length=50, null=True)
     discount = models.IntegerField(default=0)
+    category = models.CharField(choices=CATEGORY, max_length=10, default='masculino')
     image1 = models.ImageField(upload_to='products', null=False)
     image2 = models.ImageField(upload_to='products', null=False)
     image3 = models.ImageField(upload_to='products', null=False)

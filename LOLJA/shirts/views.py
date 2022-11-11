@@ -98,6 +98,23 @@ def product_detail(request, slug):
     return render(request, 'prod_details.html', context)
 
 
+def cat_products(request, cat):
+    prod = ''
+    topname = ''
+    if cat == 'masculino':
+        prod = Tshirt.objects.filter(category = 'm')
+        topname = 'Masculino'
+    elif cat == 'feminino':
+        prod = Tshirt.objects.filter(category = 'f')
+        topname = 'Feminino'
+
+    context = {'prod': prod, 'name':topname}
+    print(prod)
+    return render(request, 'product-grid.html', context)
+
+
+
+
 def addtocart(request, size, slug):
     user = None
     if request.user.is_authenticated:
@@ -537,6 +554,9 @@ def all_products(request):
     all_prod = Tshirt.objects.all()
     context = {'prod': all_prod}
     return render(request, 'webadmin/products.html', context)
+
+
+
 
 
 def delete_product(request, id):

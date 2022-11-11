@@ -21,6 +21,7 @@ urlpatterns = [
     path('webadmin/', views.admin_dashboard, name='admin_dashboard'),
     path('all_users/', views.all_users, name='all_users'),
     path('all_products/', views.all_products, name='all_products'),
+    path('products/<str:cat>', views.cat_products, name='cat_products'),
     path('add_product/', views.add_product, name='add_product'),
     path('add_brand/', views.add_brand, name='add_brand'),
     path('add_occassion/', views.add_occassion, name='add_occassion'),
