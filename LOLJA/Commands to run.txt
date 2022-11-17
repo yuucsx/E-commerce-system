@@ -1,0 +1,20 @@
+# Windows
+Criação do ambiente virtual
+py -3 -m venv .venv
+Ativando o ambiente virtual:
+.venv\scripts\activate
+Fazendo o upgrade do PIP;
+python -m pip install --upgrade pip
+Atualizar banco de dados;
+python manage.py makemigrations
+python manage.py migrate
+Rodar a aplicação e testar o Django, a base de dados e o servidor Web
+python manage.py runserver
+
+
+Criando super usuário;
+python manage.py createsuperuser
+Criando o arquivo Requeriments
+pip freeze > requirements.txt
+Instalando os Requeriments
+pip install -r requirements.txt
